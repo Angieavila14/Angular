@@ -1,0 +1,42 @@
+<div class="container">
+    <h3 class="title">Calculadora de Medidas</h3>
+    <form [formGroup]="formulario" (ngSubmit)="calculo()">
+        <div>
+            <label>Ingresar Número</label>
+            <input formControlName="entradaNumero" type="number" class="form-control">
+        </div>
+        <div class="input-group">
+            <div>
+                <label>Unidad del Número</label><br>
+                <select formControlName="unidadDelNumero"class="custom-select" id="inputGroupSelect01">
+                    <option value="1">Byte</option>
+                    <option value="1000">KiloByte</option>
+                    <option value="1000000">MegaByte</option>
+                    <option value="1000000000">GigaByte</option>
+                    <option value="1000000000000">TeraByte</option>
+                  </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <div>
+                <label>Unidad del Número</label><br>
+                <select formControlName="unidadAConvertir" class="custom-select" id="inputGroupSelect01">
+                    <option value="1">Byte</option>
+                    <option value="1000">KiloByte</option>
+                    <option value="1000000">MegaByte</option>
+                    <option value="1000000000">GigaByte</option>
+                    <option value="1000000000000">TeraByte</option>
+                  </select>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success btn-lg" [disabled]="this.formulario.invalid">
+            <span>
+            </span>Calcular</button>
+    </form>
+    <div>
+        <label>Resultado</label>
+        <input type="number" class="form-control" value="{{resultado}}" disabled>
+    </div>
+    <br>
+</div>

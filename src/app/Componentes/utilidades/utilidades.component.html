@@ -1,0 +1,43 @@
+<div class="container">
+    <h3 class="title"> Valor de venta</h3>
+    <form [formGroup]="formulario" (ngSubmit)="calculo()">
+        <div>
+            <label>Valor de compra</label>
+            <input formControlName="Valordecompra" type="number" class="form-control">
+        </div>
+        <div>
+            <label>% Utilidad o Ganancia</label>
+            <input formControlName="utilidadoganancia" type="number" class="form-control">
+        </div>
+        <div>
+            <label>% IVA</label>
+            <input formControlName="IVA" type="number" class="form-control">
+        </div>
+        <br>
+    
+
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="this.formulario.invalid">
+                <span>
+
+                </span> &nbsp; Calcular</button>
+        </div>
+    </form>
+    <br>
+    <div class="d-grid gap-2">
+        <button class="btn btn-success btn-lg"(click)="Borrar()">
+            <span>
+            </span> &nbsp; Borrar</button>
+    </div>
+    <br>
+    <div>
+        <label>Valor de venta $</label>
+        <input type="number" class="form-control"value="{{Valordeventa}}" disabled>
+    </div>
+    <div>
+        <label>Ganancia $</label>
+        <input type="number" class="form-control" value="{{Ganancia}}" disabled>
+    </div>
+    <br>
+</div>s
